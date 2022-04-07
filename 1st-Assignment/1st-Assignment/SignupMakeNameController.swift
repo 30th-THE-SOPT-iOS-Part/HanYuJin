@@ -9,13 +9,21 @@ import UIKit
 
 class SignupMakeNameController: UIViewController {
 
+    @IBOutlet weak var signupName: UITextField!
+    
+    @IBOutlet weak var backButton: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        backButton.isUserInteractionEnabled = true
+        backButton.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(BackButtonClick)))
+        
     }
-    
-
+    @objc func BackButtonClick(sender : UITapGestureRecognizer){
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -11,6 +11,7 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,9 +25,10 @@ class LoginController: UIViewController {
 //    로그인 : present 이동하기
 //    modally : 뷰 위에 뷰가 한겹 올라간 구조
     @IBAction func loginClickButton(_ sender: Any) {
-        guard let goToLoginController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") else { return }
-        self.present(goToLoginController, animated: true, completion: nil)
+        guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
+        
+        goToCompleteController.nameString.text = emailTextField.text
+        self.present(goToCompleteController, animated: true, completion: nil)
     }
-    
 }
 

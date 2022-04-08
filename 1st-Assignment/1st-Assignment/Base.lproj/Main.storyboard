@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,6 +97,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMy-x2-qpt">
                                 <rect key="frame" x="222" y="601" width="87" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="가입하기">
                                     <color key="baseForegroundColor" name="AccentColor"/>
@@ -112,6 +114,7 @@
                     <navigationItem key="navigationItem" id="B7o-xG-OQX"/>
                     <connections>
                         <outlet property="EmailTextField" destination="TCg-Rw-2xF" id="iPO-z2-RpT"/>
+                        <outlet property="buttonLogin" destination="SIo-s7-3bb" id="8nn-oA-ZsJ"/>
                         <outlet property="passwordTextField" destination="Hcf-PZ-uTe" id="veg-pL-7G2"/>
                     </connections>
                 </viewController>
@@ -170,6 +173,7 @@
                         <color key="tintColor" red="0.60784316059999999" green="0.79607844350000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="55X-Yc-CMm" id="c9J-uE-Grf"/>
                         <outlet property="signupName" destination="gKL-K0-PaZ" id="OuE-XX-59y"/>
                     </connections>
                 </viewController>
@@ -211,25 +215,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4He-VF-jGQ">
-                                <rect key="frame" x="36" y="337" width="342" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-sz-ULZ">
+                                <rect key="frame" x="33" y="338" width="342" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.60784316059999999" green="0.79607844350000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="다음">
-                                    <color key="baseBackgroundColor" red="0.60784316059999999" green="0.79607844350000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="filled" title="다음"/>
                                 <connections>
-                                    <action selector="nextButton:" destination="Mb0-Lf-Yaf" eventType="touchUpInside" id="83f-GZ-ryL"/>
-                                    <action selector="nextButton:" destination="JAt-AU-RA5" eventType="touchUpInside" id="BqJ-rd-UNk"/>
+                                    <action selector="nextButton:" destination="Mb0-Lf-Yaf" eventType="touchUpInside" id="1EU-Jg-X4l"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LUw-7T-pVa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="nextbtn" destination="6xb-sz-ULZ" id="kyV-su-Ydp"/>
+                        <outlet property="passwordTextfield" destination="xwP-Cx-BLv" id="gao-sd-ngY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oQ-71-1b3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

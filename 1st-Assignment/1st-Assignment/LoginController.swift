@@ -10,12 +10,23 @@ import UIKit
 class LoginController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
+        emailTextField.clearButtonMode = .whileEditing
+        
+        passwordTextField.addTarget(self, action: #selector(handleTextFieldDidChange), for:
+                .editingChanged)
         // Do any additional setup after loading the view.
+    }
+    @objc func handleTextFieldDidChange(_ textField: UITextField) {
+        // handle event
+//        buttonLogin.backgroundColor = UIColor(red: 55, green: 151, blue: 239, alpha: 1)
+        buttonLogin.tintColor = UIColor(red: 55/255, green: 151/255, blue: 239/255, alpha: 1)
+//        print("clicked")
     }
 //    UINavigationController
 //    push이동 : 스택위에 뷰컨을 push하고 화면을 업데이트

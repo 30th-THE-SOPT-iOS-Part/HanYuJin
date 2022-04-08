@@ -14,6 +14,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = ""
         // Do any additional setup after loading the view.
     }
 //    UINavigationController
@@ -26,8 +27,9 @@ class LoginController: UIViewController {
 //    modally : 뷰 위에 뷰가 한겹 올라간 구조
     @IBAction func loginClickButton(_ sender: Any) {
         guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
+//
+        goToCompleteController.message = emailTextField.text
         
-        goToCompleteController.nameString.text = emailTextField.text
         self.present(goToCompleteController, animated: true, completion: nil)
     }
 }

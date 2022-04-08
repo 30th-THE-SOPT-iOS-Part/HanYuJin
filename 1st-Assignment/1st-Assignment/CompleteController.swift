@@ -9,8 +9,9 @@ import UIKit
 
 class CompleteController: UIViewController {
 
-    @IBOutlet weak var nameString: UILabel!
-    var nameMessage : String?
+    
+    @IBOutlet weak var nameMessage: UILabel!
+    var message : String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +23,9 @@ class CompleteController: UIViewController {
     }
     
     private func setName(){
-        if let nameMessage = nameMessage{
-            nameString.text = nameMessage
-            nameString.sizeToFit()
+        if let message = message {
+            nameMessage.text = "\(message)님, Instagram에"
+            nameMessage.sizeToFit()
         }
     }
     /*

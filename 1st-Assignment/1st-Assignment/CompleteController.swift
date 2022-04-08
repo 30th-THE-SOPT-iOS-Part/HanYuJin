@@ -30,7 +30,7 @@ class CompleteController: UIViewController {
         
 //presentedViewController : 자신이 호출한 ViewController
 //presentingViewController : 자신을 호출한 ViewController
-        //소연언니가 알려준 코드
+//소연언니가 힌트로 알려준 코드 --> 실행안됨...ㅠ0ㅠ
 //        guard let loginVC = presentingViewController as? UINavigationController else { return }
 //        self.dismiss(animated: true) {
 //            loginVC.popToRootViewController(animated: true)
@@ -48,14 +48,5 @@ class CompleteController: UIViewController {
             nameMessage.sizeToFit()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

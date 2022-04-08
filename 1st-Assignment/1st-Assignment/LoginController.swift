@@ -15,15 +15,16 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = ""
-        emailTextField.clearButtonMode = .whileEditing
         
+        self.navigationController?.navigationBar.topItem?.title = ""
+        textfieldChange()
+    }
+    private func textfieldChange(){
+        emailTextField.clearButtonMode = .whileEditing
         passwordTextField.addTarget(self, action: #selector(handleTextFieldDidChange), for:
                 .editingChanged)
-        // Do any additional setup after loading the view.
     }
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
-        // handle event
 //        buttonLogin.backgroundColor = UIColor(red: 55, green: 151, blue: 239, alpha: 1)
         buttonLogin.tintColor = UIColor(red: 55/255, green: 151/255, blue: 239/255, alpha: 1)
 //        print("clicked")
@@ -38,7 +39,7 @@ class LoginController: UIViewController {
 //    modally : 뷰 위에 뷰가 한겹 올라간 구조
     @IBAction func loginClickButton(_ sender: Any) {
         guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
-//
+        
         goToCompleteController.message = emailTextField.text
         
         self.present(goToCompleteController, animated: true, completion: nil)

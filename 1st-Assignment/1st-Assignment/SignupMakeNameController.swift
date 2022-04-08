@@ -19,6 +19,9 @@ class SignupMakeNameController: UIViewController {
         
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "icn_back_24")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "icn_back_24")
+        textfieldChange()
+    }
+    private func textfieldChange(){
         signupName.clearButtonMode = .whileEditing
         signupName.addTarget(self, action: #selector(handleTextFieldDidChange), for:
                 .editingChanged)

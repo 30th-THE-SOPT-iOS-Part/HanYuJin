@@ -12,12 +12,24 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var eyeButton: UIButton!
+    var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.topItem?.title = ""
+        setLoginButton()
+        setNavigationController()
         textfieldChange()
+        setButtonImage()
+    }
+    private func setNavigationController(){
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    private func setLoginButton(){
+        buttonLogin.backgroundColor = UIColor(displayP3Red: 155/255, green: 203/255, blue: 247/255, alpha: 1)
+        buttonLogin.setTitle("로그인", for: .normal)
+        buttonLogin.setTitleColor(.white, for: .disabled)
+        buttonLogin.isEnabled = false
     }
     private func textfieldChange(){
         emailTextField.clearButtonMode = .whileEditing
@@ -25,9 +37,11 @@ class LoginController: UIViewController {
                 .editingChanged)
     }
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
-//        buttonLogin.backgroundColor = UIColor(red: 55, green: 151, blue: 239, alpha: 1)
-        buttonLogin.tintColor = UIColor(red: 55/255, green: 151/255, blue: 239/255, alpha: 1)
-//        print("clicked")
+        if  (emailTextField.hasText && passwordTextField.hasText) {
+            buttonLogin.isEnabled = true
+        } else{
+            buttonLogin.isEnabled = false
+        }
     }
 //    UINavigationController
 //    push이동 : 스택위에 뷰컨을 push하고 화면을 업데이트
@@ -44,5 +58,20 @@ class LoginController: UIViewController {
         
         self.present(goToCompleteController, animated: true, completion: nil)
     }
+    @IBAction func clickEyeButton(_ sender: Any) {
+        flag = !flag
+        if flag == true{
+            passwordTextField.isSecureTextEntry = true
+        } else{
+            passwordTextField.isSecureTextEntry = false
+        }
+        setButtonImage()
+    }
+    func setButtonImage(){
+        let imgName = flag ? "password-hidden-icon" : "password-shown-icon"
+        let image = UIImage(named: "\(imgName).png")!
+        eyeButton.setImage(image, for: .normal)
+    }
+    
 }
 

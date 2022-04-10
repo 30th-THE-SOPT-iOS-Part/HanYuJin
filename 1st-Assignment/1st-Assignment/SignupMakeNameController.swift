@@ -14,12 +14,20 @@ class SignupMakeNameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setLoginButton()
+        setNavigationController()
+        textfieldChange()
+    }
+    private func setLoginButton(){
+        nextButton.backgroundColor = UIColor(displayP3Red: 155/255, green: 203/255, blue: 247/255, alpha: 1)
+        nextButton.setTitle("로그인", for: .normal)
+        nextButton.setTitleColor(.white, for: .disabled)
+        nextButton.isEnabled = false
+    }
+    private func setNavigationController(){
         self.navigationController?.navigationBar.topItem?.title = ""
-        
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "icn_back_24")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "icn_back_24")
-        textfieldChange()
     }
     private func textfieldChange(){
         signupName.clearButtonMode = .whileEditing
@@ -27,7 +35,11 @@ class SignupMakeNameController: UIViewController {
                 .editingChanged)
     }
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
-        nextButton.tintColor = UIColor(red: 55/255, green: 151/255, blue: 239/255, alpha: 1)
+        if  signupName.hasText {
+            nextButton.isEnabled = true
+        } else{
+            nextButton.isEnabled = false
+        }
     }
     @IBAction func nextButton(_ sender: Any) {
         guard let goToNextController = self.storyboard?.instantiateViewController(withIdentifier: "SignupMakePasswordController") as? SignupMakePasswordController else { return }

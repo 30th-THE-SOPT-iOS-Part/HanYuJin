@@ -20,7 +20,6 @@ class CompleteController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "icn_back_24")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "icn_back_24")  
         setName()
-        // Do any additional setup after loading the view.
     }
     @IBAction func completeButton(_ sender: Any) {
         

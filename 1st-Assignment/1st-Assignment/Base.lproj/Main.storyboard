@@ -39,6 +39,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-s7-3bb">
                                 <rect key="frame" x="39" y="531" width="342" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="로그인"/>
                                 <connections>
@@ -106,6 +107,15 @@
                                     <action selector="signupClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZW-aD-fGe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKK-tb-DyK">
+                                <rect key="frame" x="337" y="431" width="44" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="password-hidden-icon" title=""/>
+                                <connections>
+                                    <action selector="clickEyeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Em6-w7-fal"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -115,6 +125,8 @@
                     <connections>
                         <outlet property="EmailTextField" destination="TCg-Rw-2xF" id="iPO-z2-RpT"/>
                         <outlet property="buttonLogin" destination="SIo-s7-3bb" id="8nn-oA-ZsJ"/>
+                        <outlet property="emailTextField" destination="TCg-Rw-2xF" id="1IB-Ha-5Gc"/>
+                        <outlet property="eyeButton" destination="sKK-tb-DyK" id="52p-eA-ZaS"/>
                         <outlet property="passwordTextField" destination="Hcf-PZ-uTe" id="veg-pL-7G2"/>
                     </connections>
                 </viewController>
@@ -161,6 +173,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55X-Yc-CMm">
                                 <rect key="frame" x="33" y="335" width="342" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="다음"/>
                                 <connections>
@@ -220,11 +233,20 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-sz-ULZ">
                                 <rect key="frame" x="33" y="338" width="342" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.60784316059999999" green="0.79607844350000001" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="다음"/>
                                 <connections>
                                     <action selector="nextButton:" destination="Mb0-Lf-Yaf" eventType="touchUpInside" id="1EU-Jg-X4l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-pv-bwd">
+                                <rect key="frame" x="337" y="275" width="44" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="password-hidden-icon" title=""/>
+                                <connections>
+                                    <action selector="clickEyeButton:" destination="Mb0-Lf-Yaf" eventType="touchUpInside" id="wHs-kP-c2j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,6 +254,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="eyeButton" destination="Au1-pv-bwd" id="yhn-KG-AWj"/>
                         <outlet property="nextbtn" destination="6xb-sz-ULZ" id="kyV-su-Ydp"/>
                         <outlet property="passwordTextfield" destination="xwP-Cx-BLv" id="gao-sd-ngY"/>
                     </connections>
@@ -265,7 +288,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7I-YZ-nFU">
                                 <rect key="frame" x="36" y="411" width="342" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="linkColor"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="완료하기"/>
                                 <connections>
@@ -315,6 +338,7 @@
     </scenes>
     <resources>
         <image name="Instagram-logo" width="175" height="50"/>
+        <image name="password-hidden-icon" width="20" height="20"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -323,6 +347,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

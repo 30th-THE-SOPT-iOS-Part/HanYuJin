@@ -35,6 +35,7 @@ class LoginController: UIViewController {
         emailTextField.clearButtonMode = .whileEditing
         passwordTextField.addTarget(self, action: #selector(handleTextFieldDidChange), for:
                 .editingChanged)
+//        만약에 둘다 addAction이 필요하면, [emailTextField,passwordTextField].forEach {  $0.addAction(UIAction(handler:self.textHandler), for:.editingChanged      }이런 방식으로도 바꿀수 있음
     }
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
         if  (emailTextField.hasText && passwordTextField.hasText) {
@@ -66,6 +67,7 @@ class LoginController: UIViewController {
             passwordTextField.isSecureTextEntry = false
         }
         setButtonImage()
+//        flag값을 사용하지 않아도, 
     }
     func setButtonImage(){
         let imgName = flag ? "password-hidden-icon" : "password-shown-icon"

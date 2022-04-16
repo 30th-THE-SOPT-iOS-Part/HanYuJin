@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2BFFDA280A83E10069C475 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFD9280A83E10069C475 /* HomeTabViewController.swift */; };
+		1A2BFFDC280A84050069C475 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDB280A84050069C475 /* SearchViewController.swift */; };
+		1A2BFFDE280A84130069C475 /* VideoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDD280A84130069C475 /* VideoTabViewController.swift */; };
+		1A2BFFE0280A841E0069C475 /* ShoppingTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */; };
+		1A2BFFE2280A84290069C475 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFE1280A84290069C475 /* ProfileTabViewController.swift */; };
 		1ACBE07627FADE0400A2213A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE07527FADE0400A2213A /* AppDelegate.swift */; };
 		1ACBE07827FADE0400A2213A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE07727FADE0400A2213A /* SceneDelegate.swift */; };
 		1ACBE07A27FADE0400A2213A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE07927FADE0400A2213A /* LoginController.swift */; };
@@ -16,9 +21,16 @@
 		1ACBE08A27FB035100A2213A /* SignupMakeNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE08927FB035100A2213A /* SignupMakeNameController.swift */; };
 		1ACBE08C27FB038500A2213A /* SignupMakePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE08B27FB038500A2213A /* SignupMakePasswordController.swift */; };
 		1ACBE08E27FB03A700A2213A /* CompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBE08D27FB03A700A2213A /* CompleteController.swift */; };
+		1ADD7E2B280A77E800E0551C /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADD7E2A280A77E800E0551C /* TabBar.storyboard */; };
+		1ADD7E2F280A78FD00E0551C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADD7E2E280A78FD00E0551C /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2BFFD9280A83E10069C475 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		1A2BFFDB280A84050069C475 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1A2BFFDD280A84130069C475 /* VideoTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTabViewController.swift; sourceTree = "<group>"; };
+		1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTabViewController.swift; sourceTree = "<group>"; };
+		1A2BFFE1280A84290069C475 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 		1ACBE07227FADE0400A2213A /* 1st-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1st-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACBE07527FADE0400A2213A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ACBE07727FADE0400A2213A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +42,8 @@
 		1ACBE08927FB035100A2213A /* SignupMakeNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupMakeNameController.swift; sourceTree = "<group>"; };
 		1ACBE08B27FB038500A2213A /* SignupMakePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupMakePasswordController.swift; sourceTree = "<group>"; };
 		1ACBE08D27FB03A700A2213A /* CompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteController.swift; sourceTree = "<group>"; };
+		1ADD7E2A280A77E800E0551C /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		1ADD7E2E280A78FD00E0551C /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 		1ACBE07427FADE0400A2213A /* 1st-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				1ADD7E29280A777C00E0551C /* Tabbar */,
 				1ACBE07527FADE0400A2213A /* AppDelegate.swift */,
 				1ACBE07727FADE0400A2213A /* SceneDelegate.swift */,
 				1ACBE07927FADE0400A2213A /* LoginController.swift */,
@@ -74,6 +89,20 @@
 				1ACBE08D27FB03A700A2213A /* CompleteController.swift */,
 			);
 			path = "1st-Assignment";
+			sourceTree = "<group>";
+		};
+		1ADD7E29280A777C00E0551C /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1A2BFFE1280A84290069C475 /* ProfileTabViewController.swift */,
+				1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */,
+				1A2BFFDD280A84130069C475 /* VideoTabViewController.swift */,
+				1A2BFFDB280A84050069C475 /* SearchViewController.swift */,
+				1A2BFFD9280A83E10069C475 /* HomeTabViewController.swift */,
+				1ADD7E2A280A77E800E0551C /* TabBar.storyboard */,
+				1ADD7E2E280A78FD00E0551C /* TabbarController.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADD7E2B280A77E800E0551C /* TabBar.storyboard in Resources */,
 				1ACBE08227FADE0700A2213A /* LaunchScreen.storyboard in Resources */,
 				1ACBE07F27FADE0700A2213A /* Assets.xcassets in Resources */,
 				1ACBE07D27FADE0400A2213A /* Main.storyboard in Resources */,
@@ -150,9 +180,15 @@
 				1ACBE08C27FB038500A2213A /* SignupMakePasswordController.swift in Sources */,
 				1ACBE08A27FB035100A2213A /* SignupMakeNameController.swift in Sources */,
 				1ACBE08E27FB03A700A2213A /* CompleteController.swift in Sources */,
+				1A2BFFDC280A84050069C475 /* SearchViewController.swift in Sources */,
+				1A2BFFDE280A84130069C475 /* VideoTabViewController.swift in Sources */,
 				1ACBE07A27FADE0400A2213A /* LoginController.swift in Sources */,
+				1A2BFFE0280A841E0069C475 /* ShoppingTabViewController.swift in Sources */,
 				1ACBE07627FADE0400A2213A /* AppDelegate.swift in Sources */,
+				1A2BFFE2280A84290069C475 /* ProfileTabViewController.swift in Sources */,
+				1A2BFFDA280A83E10069C475 /* HomeTabViewController.swift in Sources */,
 				1ACBE07827FADE0400A2213A /* SceneDelegate.swift in Sources */,
+				1ADD7E2F280A78FD00E0551C /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

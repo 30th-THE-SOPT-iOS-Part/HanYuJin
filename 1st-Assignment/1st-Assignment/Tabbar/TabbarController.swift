@@ -31,15 +31,15 @@ class TabbarController: UITabBarController {
         //탭 바 아이템 세팅
 
         HomeTabViewController.tabBarItem = UITabBarItem(
-            title: "", image: UIImage(systemName: "icn_home"), selectedImage: UIImage(systemName: "icn_home_selected"))
+            title: "home", image: UIImage(named: "icn_home"), selectedImage: UIImage(named: "icn_home_selected"))
         SearchViewController.tabBarItem = UITabBarItem(
-            title: "", image: UIImage(systemName: "icn_search"), selectedImage:UIImage(systemName: "icn_search_selected"))
+            title: "search", image: UIImage(named: "icn_search"), selectedImage:UIImage(named: "icn_search_selected"))
         VideoTabViewController.tabBarItem = UITabBarItem(
-            title: "", image: UIImage(systemName: "icn_reels"), selectedImage:UIImage(systemName: "icn_reels_selected"))
+            title: "reels", image: UIImage(named: "icn_reels"), selectedImage:UIImage(named: "icn_reels_selected"))
         ShoppingTabViewController.tabBarItem = UITabBarItem(
-            title: "", image: UIImage(systemName: "icn_shop"), selectedImage:UIImage(systemName: "icn_shop_selected"))
+            title: "shop", image: UIImage(named: "icn_shop"), selectedImage:UIImage(named: "icn_shop_selected"))
         ProfileTabViewController.tabBarItem = UITabBarItem(
-            title: "", image: UIImage(systemName: "icn_profile"), selectedImage:UIImage(systemName: "icn_profile_selected"))
+            title: "profile", image: UIImage(named: "icn_profile"), selectedImage:UIImage(named: "icn_profile_selected"))
         
         //뷰 컨트롤러 연결하기
         setViewControllers( [ HomeTabViewController, SearchViewController, VideoTabViewController,ShoppingTabViewController,ProfileTabViewController ] , animated: true)

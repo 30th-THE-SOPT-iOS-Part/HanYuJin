@@ -12,12 +12,14 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var buttonSignUp: UIButton!
     //    @IBOutlet weak var eyeButton: UIButton!
     var eyeButton = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLoginButton()
+        setSignUpButton()
         setNavigationController()
         textfieldChange()
         self.setPasswordShownButtonImage()
@@ -30,6 +32,10 @@ class LoginController: UIViewController {
         [emailTextField,passwordTextField].forEach {
             $0.text?.removeAll()
         }
+    }
+    private func setSignUpButton(){
+        buttonSignUp.setTitle("가입하기", for: .normal)
+//        buttonSignUp.titleLabel?.font = UIFont(size:15)
     }
     private func setPasswordShownButtonImage(){
         eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in

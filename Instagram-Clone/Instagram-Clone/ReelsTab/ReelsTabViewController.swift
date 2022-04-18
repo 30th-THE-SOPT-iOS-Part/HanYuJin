@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VideoTabViewController: UIViewController {
+class ReelsTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

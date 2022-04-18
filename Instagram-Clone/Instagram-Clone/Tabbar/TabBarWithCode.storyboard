@@ -11,7 +11,7 @@
         <!--Home Tab View Controller-->
         <scene sceneID="rzq-oi-oDG">
             <objects>
-                <viewController storyboardIdentifier="HomeTabViewController" id="lcR-sN-Osk" customClass="HomeTabViewController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabViewController" id="lcR-sN-Osk" customClass="HomeTabViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFG-73-Mn9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
         <!--Search View Controller-->
         <scene sceneID="RCI-88-7Da">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="Onl-j7-SjJ" customClass="SearchViewController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="Onl-j7-SjJ" customClass="SearchViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IMj-u8-zFN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--Video Tab View Controller-->
         <scene sceneID="1sf-B9-P0G">
             <objects>
-                <viewController storyboardIdentifier="VideoTabViewController" id="CBm-aQ-La2" customClass="VideoTabViewController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoTabViewController" id="CBm-aQ-La2" customClass="VideoTabViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rb3-KY-FBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Shopping Tab View Controller-->
         <scene sceneID="Xjb-MG-hZU">
             <objects>
-                <viewController storyboardIdentifier="ShoppingTabViewController" id="Z7e-bG-m7Q" customClass="ShoppingTabViewController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoppingTabViewController" id="Z7e-bG-m7Q" customClass="ShoppingTabViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7PS-aB-1NZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Profile Tab View Controller-->
         <scene sceneID="FSI-Ps-mWW">
             <objects>
-                <viewController storyboardIdentifier="ProfileTabViewController" id="A3y-sG-6Ww" customClass="ProfileTabViewController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileTabViewController" id="A3y-sG-6Ww" customClass="ProfileTabViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdn-1I-58c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Tabbar Controller-->
         <scene sceneID="CPF-uh-YCQ">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarController" id="l9W-0b-UiC" customClass="TabbarController" customModule="_st_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarController" id="l9W-0b-UiC" customClass="TabbarController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8g-QY-eLx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

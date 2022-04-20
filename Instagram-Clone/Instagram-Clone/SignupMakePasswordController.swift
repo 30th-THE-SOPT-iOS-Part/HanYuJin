@@ -12,14 +12,16 @@ class SignupMakePasswordController: UIViewController {
     var messageName : String?
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var nextbtn: UIButton!
-    @IBOutlet weak var eyeButton: UIButton!
+//    @IBOutlet weak var eyeButton: UIButton!
+    var eyeButton = UIButton(type: .custom)
     var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationController()
         textfieldChange()
-        setButtonImage()
+//        setButtonImage()
+        setPasswordShownButtonImage()
         setLoginButton()
     }
     private func setLoginButton(){
@@ -44,25 +46,42 @@ class SignupMakePasswordController: UIViewController {
         passwordTextfield.addTarget(self, action: #selector(handleTextFieldDidChange), for:
                 .editingChanged)
     }
+    private func setPasswordShownButtonImage(){
+        eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
+            passwordTextfield.isSecureTextEntry.toggle()
+            self.eyeButton.isSelected.toggle()
+        }))
+        
+        var buttonConfiguration = UIButton.Configuration.plain()
+        buttonConfiguration.imagePadding = 10
+        buttonConfiguration.baseBackgroundColor = .clear
+        
+        eyeButton.setImage(UIImage(named: "password-hidden-icon"), for: .normal)
+        self.eyeButton.setImage(UIImage(named: "password-shown-icon"), for: .selected)
+        self.eyeButton.configuration = buttonConfiguration
+        
+        self.passwordTextfield.rightView = eyeButton
+        self.passwordTextfield.rightViewMode = .always
+    }
     @IBAction func nextButton(_ sender: Any) {
         guard let goToNextController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
         goToNextController.message = messageName
         self.navigationController?.pushViewController(goToNextController, animated: true)
     }
-    @IBAction func clickEyeButton(_ sender: Any) {
-        flag = !flag
-        if flag == true{
-            passwordTextfield.isSecureTextEntry = true
-        } else{
-            passwordTextfield.isSecureTextEntry = false
-        }
-        setButtonImage()
-    }
-    func setButtonImage(){
-        let imgName = flag ? "password-hidden-icon" : "password-shown-icon"
-        let image = UIImage(named: "\(imgName).png")!
-        eyeButton.setImage(image, for: .normal)
-    }
+//    @IBAction func clickEyeButton(_ sender: Any) {
+//        flag = !flag
+//        if flag == true{
+//            passwordTextfield.isSecureTextEntry = true
+//        } else{
+//            passwordTextfield.isSecureTextEntry = false
+//        }
+//        setButtonImage()
+//    }
+//    func setButtonImage(){
+//        let imgName = flag ? "password-hidden-icon" : "password-shown-icon"
+//        let image = UIImage(named: "\(imgName).png")!
+//        eyeButton.setImage(image, for: .normal)
+//    }
     
 
 }

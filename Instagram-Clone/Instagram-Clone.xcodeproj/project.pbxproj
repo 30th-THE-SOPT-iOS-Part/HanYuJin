@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0E6BC1281229BC00F2A433 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E6BC0281229BC00F2A433 /* UIColor+.swift */; };
+		1A0E6BC528122AD600F2A433 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E6BC428122AD600F2A433 /* UIViewController+.swift */; };
+		1A0E6BC82812896100F2A433 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0E6BC72812896100F2A433 /* Color.xcassets */; };
 		1A2BFFDC280A84050069C475 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDB280A84050069C475 /* SearchViewController.swift */; };
 		1A2BFFDE280A84130069C475 /* ReelsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDD280A84130069C475 /* ReelsTabViewController.swift */; };
 		1A2BFFE0280A841E0069C475 /* ShoppingTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0E6BC0281229BC00F2A433 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		1A0E6BC428122AD600F2A433 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		1A0E6BC72812896100F2A433 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		1A2BFFDB280A84050069C475 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1A2BFFDD280A84130069C475 /* ReelsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsTabViewController.swift; sourceTree = "<group>"; };
 		1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTabViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +77,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0E6BB8281225DD00F2A433 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1A0E6BBB2812264A00F2A433 /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1A0E6BB9281225E600F2A433 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1AB9221228128DEC0042D303 /* Screen */,
+				1AB9221128128DDA0042D303 /* Auth */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1A0E6BBA281225F600F2A433 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1A0E6BC62812892100F2A433 /* Asset */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1A0E6BBB2812264A00F2A433 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A0E6BC0281229BC00F2A433 /* UIColor+.swift */,
+				1A0E6BC428122AD600F2A433 /* UIViewController+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1A0E6BC62812892100F2A433 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				1ACBE07E27FADE0700A2213A /* Assets.xcassets */,
+				1A0E6BC72812896100F2A433 /* Color.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 		1A61141E280D220700AEEC3C /* ReelsTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +165,31 @@
 			path = ShoppingTab;
 			sourceTree = "<group>";
 		};
+		1AB9221128128DDA0042D303 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1ACBE07B27FADE0400A2213A /* Main.storyboard */,
+				1ACBE08927FB035100A2213A /* SignupMakeNameController.swift */,
+				1ACBE08B27FB038500A2213A /* SignupMakePasswordController.swift */,
+				1ACBE08D27FB03A700A2213A /* CompleteController.swift */,
+				1ACBE07927FADE0400A2213A /* LoginController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1AB9221228128DEC0042D303 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				1A61143C280D2ABD00AEEC3C /* ShoppingTab */,
+				1A611433280D2A2200AEEC3C /* HomeTab */,
+				1A611430280D29FF00AEEC3C /* ProfileTab */,
+				1A61142F280D29D700AEEC3C /* SearchTab */,
+				1A61141E280D220700AEEC3C /* ReelsTab */,
+				1ADD7E29280A777C00E0551C /* Tabbar */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		1ACBE06927FADE0400A2213A = {
 			isa = PBXGroup;
 			children = (
@@ -135,22 +209,13 @@
 		1ACBE07427FADE0400A2213A /* Instagram-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				1A61143C280D2ABD00AEEC3C /* ShoppingTab */,
-				1A611433280D2A2200AEEC3C /* HomeTab */,
-				1A611430280D29FF00AEEC3C /* ProfileTab */,
-				1A61142F280D29D700AEEC3C /* SearchTab */,
-				1A61141E280D220700AEEC3C /* ReelsTab */,
-				1ADD7E29280A777C00E0551C /* Tabbar */,
+				1A0E6BBA281225F600F2A433 /* Resource */,
+				1A0E6BB9281225E600F2A433 /* Source */,
+				1A0E6BB8281225DD00F2A433 /* Global */,
 				1ACBE07527FADE0400A2213A /* AppDelegate.swift */,
 				1ACBE07727FADE0400A2213A /* SceneDelegate.swift */,
-				1ACBE07927FADE0400A2213A /* LoginController.swift */,
-				1ACBE07B27FADE0400A2213A /* Main.storyboard */,
-				1ACBE07E27FADE0700A2213A /* Assets.xcassets */,
 				1ACBE08027FADE0700A2213A /* LaunchScreen.storyboard */,
 				1ACBE08327FADE0700A2213A /* Info.plist */,
-				1ACBE08927FB035100A2213A /* SignupMakeNameController.swift */,
-				1ACBE08B27FB038500A2213A /* SignupMakePasswordController.swift */,
-				1ACBE08D27FB03A700A2213A /* CompleteController.swift */,
 			);
 			path = "Instagram-Clone";
 			sourceTree = "<group>";
@@ -229,6 +294,7 @@
 				1ADD7E2B280A77E800E0551C /* TabBarWithCode.storyboard in Resources */,
 				1ACBE08227FADE0700A2213A /* LaunchScreen.storyboard in Resources */,
 				1A61143E280D2ACF00AEEC3C /* ShoppingTab.storyboard in Resources */,
+				1A0E6BC82812896100F2A433 /* Color.xcassets in Resources */,
 				1A611437280D2A6400AEEC3C /* HomeTab.storyboard in Resources */,
 				1A611420280D222A00AEEC3C /* ReelsTab.storyboard in Resources */,
 				1ACBE07F27FADE0700A2213A /* Assets.xcassets in Resources */,
@@ -246,6 +312,7 @@
 			files = (
 				1ACBE08C27FB038500A2213A /* SignupMakePasswordController.swift in Sources */,
 				1ACBE08A27FB035100A2213A /* SignupMakeNameController.swift in Sources */,
+				1A0E6BC528122AD600F2A433 /* UIViewController+.swift in Sources */,
 				1ACBE08E27FB03A700A2213A /* CompleteController.swift in Sources */,
 				1A2BFFDC280A84050069C475 /* SearchViewController.swift in Sources */,
 				1A2BFFDE280A84130069C475 /* ReelsTabViewController.swift in Sources */,
@@ -257,6 +324,7 @@
 				1A611442280D2B2B00AEEC3C /* TabBarViewController.swift in Sources */,
 				1ACBE07827FADE0400A2213A /* SceneDelegate.swift in Sources */,
 				1ADD7E2F280A78FD00E0551C /* TabbarCodeController.swift in Sources */,
+				1A0E6BC1281229BC00F2A433 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

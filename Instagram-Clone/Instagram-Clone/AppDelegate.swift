@@ -10,14 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 15, *) {
-            let appearance = UITabBarAppearance()
-            let tabBar = UITabBar()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .white
-            tabBar.standardAppearance = appearance;
-            UITabBar.appearance().scrollEdgeAppearance = appearance
-        }
+//        if #available(iOS 15, *) {
+//            let appearance = UITabBarAppearance()
+//            let tabBar = UITabBar()
+//            appearance.configureWithOpaqueBackground()
+//            appearance.backgroundColor = .white
+//            tabBar.standardAppearance = appearance;
+//            UITabBar.appearance().scrollEdgeAppearance = appearance
+//        }
         // Override point for customization after application launch.
         return true
     }

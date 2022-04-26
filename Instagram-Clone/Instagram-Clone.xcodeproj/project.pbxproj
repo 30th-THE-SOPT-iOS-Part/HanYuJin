@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				1AB9221228128DEC0042D303 /* Screen */,
-				1AB9221128128DDA0042D303 /* Auth */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -97,6 +96,7 @@
 		1A0E6BBA281225F600F2A433 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1AAB06592817CD6D008AA420 /* Storyboard */,
 				1A0E6BC62812892100F2A433 /* Asset */,
 			);
 			path = Resource;
@@ -124,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				1A2BFFDD280A84130069C475 /* ReelsTabViewController.swift */,
-				1A61141F280D222A00AEEC3C /* ReelsTab.storyboard */,
 			);
 			path = ReelsTab;
 			sourceTree = "<group>";
@@ -133,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				1A2BFFDB280A84050069C475 /* SearchViewController.swift */,
-				1A61143A280D2AA500AEEC3C /* SearchTab.storyboard */,
 			);
 			path = SearchTab;
 			sourceTree = "<group>";
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				1A2BFFE1280A84290069C475 /* ProfileTabViewController.swift */,
-				1A611431280D2A1900AEEC3C /* ProfileTab.storyboard */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -150,7 +147,6 @@
 		1A611433280D2A2200AEEC3C /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				1A611436280D2A6400AEEC3C /* HomeTab.storyboard */,
 				1A611438280D2A9700AEEC3C /* HomeTabViewController.swift */,
 			);
 			path = HomeTab;
@@ -159,25 +155,54 @@
 		1A61143C280D2ABD00AEEC3C /* ShoppingTab */ = {
 			isa = PBXGroup;
 			children = (
-				1A61143D280D2ACF00AEEC3C /* ShoppingTab.storyboard */,
 				1A2BFFDF280A841E0069C475 /* ShoppingTabViewController.swift */,
 			);
 			path = ShoppingTab;
 			sourceTree = "<group>";
 		};
-		1AB9221128128DDA0042D303 /* Auth */ = {
+		1AAB06582817CC71008AA420 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1ACBE07B27FADE0400A2213A /* Main.storyboard */,
 				1ACBE08927FB035100A2213A /* SignupMakeNameController.swift */,
 				1ACBE08B27FB038500A2213A /* SignupMakePasswordController.swift */,
 				1ACBE08D27FB03A700A2213A /* CompleteController.swift */,
 				1ACBE07927FADE0400A2213A /* LoginController.swift */,
 			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1AAB06592817CD6D008AA420 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1AAB065D2817CE2D008AA420 /* TabBar */,
+				1AAB065C2817CE05008AA420 /* Auth */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1AAB065C2817CE05008AA420 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1ACBE07B27FADE0400A2213A /* Main.storyboard */,
+			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		1AB9221228128DEC0042D303 /* Screen */ = {
+		1AAB065D2817CE2D008AA420 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1A611431280D2A1900AEEC3C /* ProfileTab.storyboard */,
+				1A61141F280D222A00AEEC3C /* ReelsTab.storyboard */,
+				1A611436280D2A6400AEEC3C /* HomeTab.storyboard */,
+				1A61143D280D2ACF00AEEC3C /* ShoppingTab.storyboard */,
+				1A61143F280D2B0100AEEC3C /* Tabbar.storyboard */,
+				1A61143A280D2AA500AEEC3C /* SearchTab.storyboard */,
+				1ADD7E2A280A77E800E0551C /* TabBarWithCode.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1AAB065E2817CE7E008AA420 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				1A61143C280D2ABD00AEEC3C /* ShoppingTab */,
@@ -185,6 +210,24 @@
 				1A611430280D29FF00AEEC3C /* ProfileTab */,
 				1A61142F280D29D700AEEC3C /* SearchTab */,
 				1A61141E280D220700AEEC3C /* ReelsTab */,
+				1ADD7E2E280A78FD00E0551C /* TabbarCodeController.swift */,
+				1A611441280D2B2B00AEEC3C /* TabBarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1AB9221128128DDA0042D303 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1AAB06582817CC71008AA420 /* Controller */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1AB9221228128DEC0042D303 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				1AB9221128128DDA0042D303 /* Auth */,
 				1ADD7E29280A777C00E0551C /* Tabbar */,
 			);
 			path = Screen;
@@ -223,10 +266,7 @@
 		1ADD7E29280A777C00E0551C /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				1ADD7E2A280A77E800E0551C /* TabBarWithCode.storyboard */,
-				1ADD7E2E280A78FD00E0551C /* TabbarCodeController.swift */,
-				1A61143F280D2B0100AEEC3C /* Tabbar.storyboard */,
-				1A611441280D2B2B00AEEC3C /* TabBarViewController.swift */,
+				1AAB065E2817CE7E008AA420 /* Controller */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";

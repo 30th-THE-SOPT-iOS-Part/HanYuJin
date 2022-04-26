@@ -24,11 +24,9 @@ class CompleteController: UIViewController {
     }
     @IBAction func completeButton(_ sender: Any) {
         //스토리보드 찾아주기 (다른 파일에 있는 스토리보드임)
-        let sb = UIStoryboard(name: "Tabbar", bundle: nil)
-        let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as! UITabBarController
-        //꽉찬화면으로 전달
-        tabVC.modalPresentationStyle = .fullScreen
-        self.present(tabVC, animated: true, completion: nil)
+        let sb = UIStoryboard.init(name: "Tabbar", bundle: nil)
+        guard let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as? UITabBarController else {return}
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC, animated: false)
     }
     
     private func setName(){

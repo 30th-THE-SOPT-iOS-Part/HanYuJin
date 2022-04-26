@@ -26,7 +26,7 @@ class LoginController: UIViewController {
     private func setPasswordShownButtonImage(){
         eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
             passwordTextField.isSecureTextEntry.toggle()
-            self.eyeButton.isSelected.toggle()
+            eyeButton.isSelected.toggle()
         }))
         
         var buttonConfiguration = UIButton.Configuration.plain()
@@ -34,11 +34,11 @@ class LoginController: UIViewController {
         buttonConfiguration.baseBackgroundColor = .clear
         
         eyeButton.setImage(UIImage(named: "password-hidden-icon"), for: .normal)
-        self.eyeButton.setImage(UIImage(named: "password-shown-icon"), for: .selected)
-        self.eyeButton.configuration = buttonConfiguration
+        eyeButton.setImage(UIImage(named: "password-shown-icon"), for: .selected)
+        eyeButton.configuration = buttonConfiguration
         
-        self.passwordTextField.rightView = eyeButton
-        self.passwordTextField.rightViewMode = .always
+        passwordTextField.rightView = eyeButton
+        passwordTextField.rightViewMode = .always
     }
     override func viewWillAppear(_ animated: Bool) {
         removeTextField()

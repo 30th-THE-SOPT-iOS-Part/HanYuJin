@@ -51,11 +51,11 @@ class SignupMakePasswordController: UIViewController {
         buttonConfiguration.baseBackgroundColor = .clear
         
         eyeButton.setImage(UIImage(named: "password-hidden-icon"), for: .normal)
-        self.eyeButton.setImage(UIImage(named: "password-shown-icon"), for: .selected)
-        self.eyeButton.configuration = buttonConfiguration
+        eyeButton.setImage(UIImage(named: "password-shown-icon"), for: .selected)
+        eyeButton.configuration = buttonConfiguration
         
-        self.passwordTextfield.rightView = eyeButton
-        self.passwordTextfield.rightViewMode = .always
+        passwordTextfield.rightView = eyeButton
+        passwordTextfield.rightViewMode = .always
     }
     @IBAction func nextButton(_ sender: Any) {
         guard let goToNextController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }

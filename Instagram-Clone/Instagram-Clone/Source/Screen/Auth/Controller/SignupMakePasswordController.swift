@@ -59,7 +59,10 @@ class SignupMakePasswordController: UIViewController {
     }
     @IBAction func nextButton(_ sender: Any) {
         guard let goToNextController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
+        
         goToNextController.message = messageName
-        self.navigationController?.pushViewController(goToNextController, animated: true)
+        self.navigationController?.present(goToNextController, animated: true){
+            self.navigationController?.popToRootViewController(animated: false)
+        }
     }
 }

@@ -30,7 +30,7 @@ class SignupMakePasswordController: UIViewController {
         nextbtn.isEnabled = false
     }
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
-        if  passwordTextfield.hasText {
+        if passwordTextfield.hasText {
             nextbtn.isEnabled = true
         } else{
             nextbtn.isEnabled = false
@@ -43,7 +43,7 @@ class SignupMakePasswordController: UIViewController {
     private func setPasswordShownButtonImage(){
         eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
             passwordTextfield.isSecureTextEntry.toggle()
-            self.eyeButton.isSelected.toggle()
+            eyeButton.isSelected.toggle()
         }))
         
         var buttonConfiguration = UIButton.Configuration.plain()

@@ -9,9 +9,17 @@ import UIKit
 
 class StoryCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = "StoryCollectionViewCell"
+    
+    @IBOutlet weak var authorImageView: UIImageView!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    func setData(storyData:StoryDataModel){
+        authorImageView.image = UIImage(named: storyData.authorImage)
+        authorNameLabel.text = storyData.authorNameLabel
+    }
 }

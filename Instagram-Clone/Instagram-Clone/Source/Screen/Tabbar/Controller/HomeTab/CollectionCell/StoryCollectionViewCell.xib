@@ -34,6 +34,10 @@
                 <constraint firstItem="wyD-wS-iVX" firstAttribute="centerX" secondItem="pRX-qE-k7n" secondAttribute="centerX" id="QsJ-qc-bUe"/>
             </constraints>
             <size key="customSize" width="163" height="192"/>
+            <connections>
+                <outlet property="authorImageView" destination="pRX-qE-k7n" id="TPe-k7-Jkj"/>
+                <outlet property="authorNameLabel" destination="wyD-wS-iVX" id="TIg-qF-uHY"/>
+            </connections>
             <point key="canvasLocation" x="213.04347826086959" y="150.66964285714286"/>
         </collectionViewCell>
     </objects>

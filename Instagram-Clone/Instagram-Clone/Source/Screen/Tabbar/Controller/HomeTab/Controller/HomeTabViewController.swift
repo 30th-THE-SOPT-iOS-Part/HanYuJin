@@ -37,14 +37,17 @@ class HomeTabViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = collectionView
-//        tableView.addSubview(collectionView)
     }
-
 }
 // MARK:- TableView Delegate
 extension HomeTabViewController : UITableViewDelegate{
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.rowHeight
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 extension HomeTabViewController : UITableViewDataSource{

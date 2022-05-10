@@ -65,7 +65,7 @@
                                     <constraint firstItem="dl6-eo-ilP" firstAttribute="top" secondItem="Mw7-jX-pGn" secondAttribute="top" constant="10" id="rTB-Ba-jl9"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-MP-xQb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-MP-xQb">
                                 <rect key="frame" x="0.0" y="44" width="375" height="319"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-DM-eam" userLabel="Body">
@@ -182,18 +182,18 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="488" id="39y-jV-Ahh"/>
                             <constraint firstItem="PZd-wa-csa" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="5hJ-i4-VMV"/>
-                            <constraint firstItem="aVi-MP-xQb" firstAttribute="top" secondItem="Mw7-jX-pGn" secondAttribute="bottom" id="BT6-yT-JW1"/>
                             <constraint firstItem="ySJ-YB-oFB" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Bil-Xg-yjd"/>
                             <constraint firstItem="hx9-6g-6g6" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Jzr-qB-Zeg"/>
                             <constraint firstItem="PZd-wa-csa" firstAttribute="top" secondItem="hx9-6g-6g6" secondAttribute="bottom" id="Mqv-6j-7Bp"/>
-                            <constraint firstAttribute="trailing" secondItem="aVi-MP-xQb" secondAttribute="trailing" id="OW2-SM-H2Y"/>
+                            <constraint firstItem="aVi-MP-xQb" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" id="Myg-T5-BBh"/>
                             <constraint firstItem="ySJ-YB-oFB" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Qdy-aV-7uk"/>
-                            <constraint firstItem="ofa-DM-eam" firstAttribute="top" secondItem="aVi-MP-xQb" secondAttribute="bottom" id="eUQ-Wm-2js"/>
+                            <constraint firstAttribute="trailing" secondItem="aVi-MP-xQb" secondAttribute="trailing" id="ab0-Up-iqq"/>
+                            <constraint firstItem="aVi-MP-xQb" firstAttribute="top" secondItem="Mw7-jX-pGn" secondAttribute="bottom" id="h3c-cW-5kx"/>
                             <constraint firstItem="hx9-6g-6g6" firstAttribute="top" secondItem="ofa-DM-eam" secondAttribute="bottom" id="lqh-zz-m3u"/>
                             <constraint firstItem="ySJ-YB-oFB" firstAttribute="top" secondItem="PZd-wa-csa" secondAttribute="bottom" id="nhM-Iw-zG0"/>
+                            <constraint firstItem="ofa-DM-eam" firstAttribute="top" secondItem="aVi-MP-xQb" secondAttribute="bottom" id="njH-YP-Y0j"/>
                             <constraint firstAttribute="bottom" secondItem="ySJ-YB-oFB" secondAttribute="bottom" id="qoO-cG-42e"/>
                             <constraint firstAttribute="trailing" secondItem="PZd-wa-csa" secondAttribute="trailing" id="u3Q-lm-Zhx"/>
-                            <constraint firstItem="aVi-MP-xQb" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" id="xlS-2c-euC"/>
                         </constraints>
                     </stackView>
                 </subviews>

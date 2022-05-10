@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--home-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="HomeTabViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugM-CL-iRE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram-logo" translatesAutoresizingMaskIntoConstraints="NO" id="noK-hC-21b">
+                                        <rect key="frame" x="14" y="9" width="96" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="noK-hC-21b" secondAttribute="height" multiplier="96:27" id="qJP-3q-BBj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iap-aj-jvB">
+                                        <rect key="frame" x="296" y="10" width="104" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_add" translatesAutoresizingMaskIntoConstraints="NO" id="7g7-ql-rQw">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7g7-ql-rQw" secondAttribute="height" multiplier="24:24" id="WIY-Ij-vGh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_unlike" translatesAutoresizingMaskIntoConstraints="NO" id="acJ-ze-Yxd">
+                                                <rect key="frame" x="40" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="acJ-ze-Yxd" secondAttribute="height" multiplier="24:24" id="AA9-vd-AIf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_share" translatesAutoresizingMaskIntoConstraints="NO" id="Cbr-e7-udz">
+                                                <rect key="frame" x="80" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Cbr-e7-udz" secondAttribute="height" multiplier="24:24" id="ijO-zD-hib"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Cbr-e7-udz" firstAttribute="width" secondItem="Cbr-e7-udz" secondAttribute="height" multiplier="24:24" id="T8Z-wc-R4a"/>
+                                            <constraint firstItem="acJ-ze-Yxd" firstAttribute="width" secondItem="acJ-ze-Yxd" secondAttribute="height" multiplier="24:24" id="a9g-AN-Ccy"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="iap-aj-jvB" firstAttribute="top" secondItem="ugM-CL-iRE" secondAttribute="top" constant="10" id="6o5-YM-fuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="iap-aj-jvB" secondAttribute="trailing" constant="14" id="HYq-Rg-nmw"/>
+                                    <constraint firstAttribute="bottom" secondItem="iap-aj-jvB" secondAttribute="bottom" constant="10" id="KTO-sV-j8M"/>
+                                    <constraint firstAttribute="height" constant="44" id="kxf-uV-1wS"/>
+                                    <constraint firstItem="noK-hC-21b" firstAttribute="leading" secondItem="ugM-CL-iRE" secondAttribute="leading" constant="14" id="oAX-6h-c9k"/>
+                                    <constraint firstItem="noK-hC-21b" firstAttribute="top" secondItem="ugM-CL-iRE" secondAttribute="top" constant="9" id="tAm-va-MBs"/>
+                                    <constraint firstAttribute="bottom" secondItem="noK-hC-21b" secondAttribute="bottom" constant="8" id="uBi-mH-Q0w"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JKL-Ue-LHM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ugM-CL-iRE" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="8kv-oH-NIn"/>
+                            <constraint firstItem="ugM-CL-iRE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="F5z-a6-UPV"/>
+                            <constraint firstAttribute="trailing" secondItem="JKL-Ue-LHM" secondAttribute="trailing" id="Fnu-pz-zjD"/>
+                            <constraint firstItem="ugM-CL-iRE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Gj7-GJ-Skm"/>
+                            <constraint firstItem="JKL-Ue-LHM" firstAttribute="top" secondItem="ugM-CL-iRE" secondAttribute="bottom" id="bxh-fw-zhN"/>
+                            <constraint firstAttribute="bottom" secondItem="JKL-Ue-LHM" secondAttribute="bottom" id="hkL-WE-LvZ"/>
+                            <constraint firstItem="JKL-Ue-LHM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nKe-J3-ry7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="home" image="icn_home" selectedImage="icn_home_selected" id="FMx-D5-eGW">
+                        <color key="badgeColor" systemColor="labelColor"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="JKL-Ue-LHM" id="Omy-tU-8pG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Instagram-logo" width="175" height="50"/>
+        <image name="icn_add" width="24" height="24"/>
+        <image name="icn_home" width="24" height="24"/>
+        <image name="icn_home_selected" width="24" height="24"/>
+        <image name="icn_share" width="24" height="24"/>
+        <image name="icn_unlike" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

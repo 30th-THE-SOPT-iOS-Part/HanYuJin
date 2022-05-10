@@ -11,7 +11,8 @@ class CompleteController: UIViewController {
 
     
     @IBOutlet weak var nameMessage: UILabel!
-    var message : String?
+    var name : String?
+    var password :String?
     override func viewDidLoad() {
         super.viewDidLoad()
         customBackButtonNavigationBar()
@@ -23,15 +24,17 @@ class CompleteController: UIViewController {
         }
     }
     @IBAction func completeButton(_ sender: Any) {
-        //스토리보드 찾아주기 (다른 파일에 있는 스토리보드임)
-        let sb = UIStoryboard.init(name: "Tabbar", bundle: nil)
-        guard let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as? UITabBarController else {return}
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC, animated: false)
+//        let sb = UIStoryboard.init(name: "Tabbar", bundle: nil)
+//        guard let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as? UITabBarController else {return}
+//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC, animated: false)
+        if let name = name, let password = password {
+            signup(email: name, name: name, password: password)
+        }
     }
     
     private func setName(){
-        if let message = message {
-            nameMessage.text = "\(message)님, Instagram에"
+        if let name = name {
+            nameMessage.text = "\(name)님, Instagram에"
             nameMessage.sizeToFit()
         }
     }

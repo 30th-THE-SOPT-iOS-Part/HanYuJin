@@ -43,7 +43,6 @@ class LoginController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         removeTextField()
     }
-    //view가 사라질때, textfield 글자 없어지게
     private func removeTextField() {
         [emailTextField,passwordTextField].forEach {
             $0.text?.removeAll()
@@ -51,7 +50,6 @@ class LoginController: UIViewController {
     }
     private func setSignUpButton(){
         buttonSignUp.setTitle("가입하기", for: .normal)
-//        buttonSignUp.titleLabel?.font = UIFont(size:15)
     }
 
     private func setNavigationControllerBar(){
@@ -75,8 +73,6 @@ class LoginController: UIViewController {
         } else{
             buttonLogin.isEnabled = false
         }
-        //        self.buttonLogin.isEnabled = self.emailTextField.hasText && self.passwordTextField.hasText
-        
     }
     //    UINavigationController
     //    push이동 : 스택위에 뷰컨을 push하고 화면을 업데이트
@@ -87,9 +83,10 @@ class LoginController: UIViewController {
     //    로그인 : present 이동하기
     //    modally : 뷰 위에 뷰가 한겹 올라간 구조
     @IBAction func loginClickButton(_ sender: Any) {
+        
         guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
         
-        goToCompleteController.message = emailTextField.text
+        goToCompleteController.name = emailTextField.text
         goToCompleteController.modalPresentationStyle = .fullScreen
         self.present(goToCompleteController, animated: true, completion: nil)
     }

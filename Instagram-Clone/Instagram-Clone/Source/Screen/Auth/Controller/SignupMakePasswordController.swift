@@ -12,9 +12,8 @@ class SignupMakePasswordController: UIViewController {
     var messageName : String?
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var nextbtn: UIButton!
-//    @IBOutlet weak var eyeButton: UIButton!
+    
     var eyeButton = UIButton(type: .custom)
-    var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +59,8 @@ class SignupMakePasswordController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         guard let goToNextController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
         
-        goToNextController.message = messageName
+        goToNextController.name = messageName
+        goToNextController.password = passwordTextfield.text
         self.navigationController?.present(goToNextController, animated: true){
             self.navigationController?.popToRootViewController(animated: false)
         }

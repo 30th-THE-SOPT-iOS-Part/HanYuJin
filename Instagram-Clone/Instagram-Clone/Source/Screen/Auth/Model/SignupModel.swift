@@ -9,11 +9,10 @@ import Foundation
 
 struct SignupResponse: Codable {
     let status: Int
-    let success: Bool?
+    let success: Bool
     let message: String
     let data: SignupData?
 }
-
 struct SignupData: Codable {
-    let id: String
+    let id: Int
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginResponse: Codable {
     let status: Int
-    let success: Bool?
+    let success: Bool
     let message: String
     let data: LoginData?
 }

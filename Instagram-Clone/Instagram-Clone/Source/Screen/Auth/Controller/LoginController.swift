@@ -51,7 +51,7 @@ class LoginController: UIViewController {
     private func setSignUpButton(){
         buttonSignUp.setTitle("가입하기", for: .normal)
     }
-
+    
     private func setNavigationControllerBar(){
         self.navigationController?.navigationBar.topItem?.title = ""
     }
@@ -84,11 +84,55 @@ class LoginController: UIViewController {
     //    modally : 뷰 위에 뷰가 한겹 올라간 구조
     @IBAction func loginClickButton(_ sender: Any) {
         
-        guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
+        if let name = emailTextField.text, let password = passwordTextField.text {
+            login(name: name, email: name, password: password)
+        }
         
-        goToCompleteController.name = emailTextField.text
-        goToCompleteController.modalPresentationStyle = .fullScreen
-        self.present(goToCompleteController, animated: true, completion: nil)
+//        guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
+//
+//        goToCompleteController.name = emailTextField.text
+//        goToCompleteController.modalPresentationStyle = .fullScreen
+//        self.present(goToCompleteController, animated: true, completion: nil)
     }
 }
 
+extension LoginController {
+    func login(name: String, email : String, password : String){
+        
+        UserService.shared.login(name: name, email: email, password: password) {
+            response in
+            switch response {
+            case .success(let data):
+                print(response)
+                guard let data = data as? LoginResponse else { return }
+                print(data)
+                self.alertLogin(message: "로그인 성공")
+            case .requestErr(let err):
+                print(err)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    func alertLoginFail(message:String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default){
+            action 
+        }
+    }
+    func alertLogin(message: String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default){
+            action in
+            let sb = UIStoryboard.init(name: "Tabbar", bundle: nil)
+            guard let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as? UITabBarController else {return}
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC, animated: false)
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true)
+    }
+}

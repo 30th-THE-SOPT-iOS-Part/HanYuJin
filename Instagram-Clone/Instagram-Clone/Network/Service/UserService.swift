@@ -55,7 +55,7 @@ class UserService {
     func signup(name: String, email: String, password: String, completion: @escaping(NetworkResult<Any>) -> Void)
     {
         let url = APIConstants.signUpURL
-        
+        print(url)
         let header : HTTPHeaders = ["Content-Type" : "application/json"]
         //HTTP Headers
         let body : Parameters = [
@@ -63,7 +63,7 @@ class UserService {
             "email" : email,
             "password" : password
         ]
-        
+        print(body)
         //요청서 //Request 생성
         let dataRequest = AF.request(url,
                                     method: .post,
@@ -77,8 +77,8 @@ class UserService {
             case .success:
                 guard let statusCode = response.response?.statusCode else {return}
                 guard let value = response.value else {return}
-                
-                let networkResult = self.judgeStatus(by: statusCode, value)
+                print("success")
+                let networkResult = self.judgeSignupStatus(by: statusCode, value)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
@@ -93,9 +93,33 @@ class UserService {
         default : return .networkFail
         }
     }
+    private func judgeSignupStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        switch statusCode {
+        case ..<300 :
+            print(statusCode,"입니다")
+            return isSignupVaildData(data: data)
+        case 400..<500 :
+            print(statusCode,"입니다")
+            return .pathErr
+        case 500..<600 :
+            print(statusCode,"입니다")
+            return .serverErr
+        default :
+            print(statusCode,"입니다")
+            return .networkFail
+        }
+    }
     private func isVaildData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(LoginResponse.self, from: data)
+        else { return .pathErr }
+        
+        return .success(decodedData as Any)
+    }
+    private func isSignupVaildData(data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        print("성공은 해서 signupvaliddata에 들어옴")
+        guard let decodedData = try? decoder.decode(SignupResponse.self, from: data)
         else { return .pathErr }
         
         return .success(decodedData as Any)

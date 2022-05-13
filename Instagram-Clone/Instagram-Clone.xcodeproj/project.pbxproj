@@ -212,6 +212,7 @@
 		1A3D74CC28293BFF00AF2280 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1A3D74D328293D9A00AF2280 /* Service */,
 				1A3D74CD28293C1500AF2280 /* APIConstants.swift */,
 				1A3D74CF28293C2500AF2280 /* NetworkResult.swift */,
 			);
@@ -256,7 +257,6 @@
 		1A611433280D2A2200AEEC3C /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				1A3D74D328293D9A00AF2280 /* Service */,
 				1ACBC84F281C411D0018C72E /* Controller */,
 				1ACBC84E281C41160018C72E /* View */,
 				1ACBC84D281C410C0018C72E /* Model */,
@@ -316,8 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				1ACBC853281C42790018C72E /* StoryCollectionViewCell.swift */,
-				1ACBC854281C42790018C72E /* StoryCollectionViewCell.xib */,
 				1ACBC857281C42990018C72E /* FeedTableViewCell.swift */,
+				1ACBC854281C42790018C72E /* StoryCollectionViewCell.xib */,
 				1ACBC858281C42990018C72E /* FeedTableViewCell.xib */,
 				1A611436280D2A6400AEEC3C /* HomeTab.storyboard */,
 			);

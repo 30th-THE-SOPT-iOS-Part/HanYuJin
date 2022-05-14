@@ -37,7 +37,7 @@ class CompleteController: UIViewController {
     //MARK: - UI
     private func setName(){
         if let name = name {
-            nameMessage.text = "\(name)님, Instagram에"
+            nameMessage.text = "\(name)님, Instagram에 오신 것을 환영합니다." 
             nameMessage.sizeToFit()
         }
     }

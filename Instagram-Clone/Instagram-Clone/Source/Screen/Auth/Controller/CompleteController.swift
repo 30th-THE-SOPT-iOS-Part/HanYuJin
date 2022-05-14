@@ -13,11 +13,15 @@ class CompleteController: UIViewController {
     @IBOutlet weak var nameMessage: UILabel!
     var name : String?
     var password :String?
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customBackButtonNavigationBar()
         setName()
     }
+    
+    //MARK: - Button @IBAction
     @IBAction func loginWithDifferentIDButton(_ sender: Any) {
         self.dismiss(animated: true){
             self.navigationController?.popToRootViewController(animated: true)
@@ -30,6 +34,7 @@ class CompleteController: UIViewController {
         }
     }
     
+    //MARK: - UI
     private func setName(){
         if let name = name {
             nameMessage.text = "\(name)님, Instagram에"

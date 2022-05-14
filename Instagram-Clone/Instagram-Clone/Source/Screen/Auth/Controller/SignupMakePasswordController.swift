@@ -12,22 +12,18 @@ class SignupMakePasswordController: UIViewController {
     var messageName : String?
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var nextbtn: UIButton!
-    
     var eyeButton = UIButton(type: .custom)
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customBackButtonNavigationBar()
         textfieldChange()
         setPasswordShownButtonImage()
-        setLoginButton()
+        setNextButton()
     }
-    private func setLoginButton(){
-        nextbtn.backgroundColor = .button_skyblue
-        nextbtn.setTitle("로그인", for: .normal)
-        nextbtn.setTitleColor(.white, for: .disabled)
-        nextbtn.isEnabled = false
-    }
+    //MARK: - Text Field
     @objc func handleTextFieldDidChange(_ textField: UITextField) {
         if passwordTextfield.hasText {
             nextbtn.isEnabled = true
@@ -39,6 +35,14 @@ class SignupMakePasswordController: UIViewController {
         passwordTextfield.addTarget(self, action: #selector(handleTextFieldDidChange), for:
                 .editingChanged)
     }
+    //MARK: - Button
+    private func setNextButton(){
+        nextbtn.backgroundColor = .button_skyblue
+        nextbtn.setTitle("다음", for: .normal)
+        nextbtn.setTitleColor(.white, for: .disabled)
+        nextbtn.isEnabled = false
+    }
+    
     private func setPasswordShownButtonImage(){
         eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
             passwordTextfield.isSecureTextEntry.toggle()
@@ -61,6 +65,7 @@ class SignupMakePasswordController: UIViewController {
         
         goToNextController.name = messageName
         goToNextController.password = passwordTextfield.text
+        goToNextController.modalTransitionStyle = .crossDissolve
         self.navigationController?.present(goToNextController, animated: true){
             self.navigationController?.popToRootViewController(animated: false)
         }

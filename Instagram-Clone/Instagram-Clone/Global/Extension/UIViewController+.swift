@@ -15,5 +15,10 @@ extension UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = backButtonIcon
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonIcon
     }
+    func removeTextField(_ emailTextField:UITextField, _ passwordTextField:UITextField) {
+        [emailTextField,passwordTextField].forEach {
+            $0.text?.removeAll()
+        }
+    }
 }
 

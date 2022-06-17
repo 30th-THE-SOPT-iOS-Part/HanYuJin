@@ -16,9 +16,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var content: UILabel!
     @IBOutlet weak var commentDescription: UIButton!
-    @IBOutlet weak var content: UIButton!
-    @IBOutlet weak var authorLabel2: UIButton!
     @IBOutlet weak var likeDescription: UIButton!
     @IBOutlet weak var bookMarkButton: UIButton!
     @IBOutlet weak var dmButton: UIButton!
@@ -27,23 +26,43 @@ class FeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    // MARK: - Feed Data Model 연결
     func setData(_ feedData:FeedDataModel){
-        feedImage.image = feedData.feedImage
+        feedImage.image = .load(named: feedData.feedImageName)
         authorImage.setImage(feedData.authorImage, for: .normal)
-        content.setTitle(feedData.content, for: .normal)
         authorLabel1.setTitle(feedData.author, for: .normal)
-        authorLabel2.setTitle(feedData.author, for: .normal)
         commentDescription.setTitle(feedData.commentDescription, for: .normal)
+        content.attributedText = attributeString(profileName: feedData.feedImageName, content: feedData.content)
         likeDescription.setTitle(feedData.likeDescription, for: .normal)
     }
+    // MARK: - IBAction
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     @IBAction func likeButtonClicked(_ sender: UIButton) {
-        print(sender.currentImage ?? "no")
         let imageName = sender.currentImage ==  UIImage(named:"icn_unlike") ? "icn_like" : "icn_unlike"
         sender.setImage(UIImage(named: imageName), for: .normal)
     }
+}
+extension FeedTableViewCell {
     
+    func attributeString(profileName : String, content : String) -> NSAttributedString {
+        
+        let profileNameFont = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        let profileNameAttr: [NSMutableAttributedString.Key: Any] = [
+            .font: profileNameFont,
+        ]
+        
+        let contentFont = UIFont.systemFont(ofSize: 10, weight: .medium)
+        let contentFontAttr: [NSMutableAttributedString.Key: Any] = [
+            .font: contentFont,
+        ]
+        let profileNameAttributedString = NSMutableAttributedString(string: "\(profileName) ", attributes: profileNameAttr)
+        
+        let contentAttributedString = NSMutableAttributedString(string: "\(content) ", attributes: contentFontAttr)
+        
+        profileNameAttributedString.append(contentAttributedString)
+        
+        return profileNameAttributedString
+    }
 }

@@ -136,36 +136,12 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PZd-wa-csa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djm-O9-7Fq">
                                 <rect key="frame" x="12" y="433" width="363" height="25"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-G6-m7p">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="c9W-Ce-pBD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="avatar1">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zra-Wa-nHX">
-                                        <rect key="frame" x="50" y="0.0" width="313" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="늘 하던 대로 하면 늘 얻던 것을 얻는다">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="zra-Wa-nHX" firstAttribute="leading" secondItem="Mvj-G6-m7p" secondAttribute="trailing" id="4q7-8H-sMa"/>
-                                    <constraint firstItem="Mvj-G6-m7p" firstAttribute="centerY" secondItem="PZd-wa-csa" secondAttribute="centerY" id="gXx-6Y-ChR"/>
-                                    <constraint firstAttribute="height" constant="25" id="sHa-DA-Nx0"/>
-                                    <constraint firstItem="zra-Wa-nHX" firstAttribute="centerY" secondItem="PZd-wa-csa" secondAttribute="centerY" id="wCT-sY-LST"/>
-                                </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-YB-oFB">
                                 <rect key="frame" x="12" y="458" width="150" height="30"/>
                                 <constraints>
@@ -181,19 +157,16 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="488" id="39y-jV-Ahh"/>
-                            <constraint firstItem="PZd-wa-csa" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="5hJ-i4-VMV"/>
                             <constraint firstItem="ySJ-YB-oFB" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Bil-Xg-yjd"/>
                             <constraint firstItem="hx9-6g-6g6" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Jzr-qB-Zeg"/>
-                            <constraint firstItem="PZd-wa-csa" firstAttribute="top" secondItem="hx9-6g-6g6" secondAttribute="bottom" id="Mqv-6j-7Bp"/>
                             <constraint firstItem="aVi-MP-xQb" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" id="Myg-T5-BBh"/>
                             <constraint firstItem="ySJ-YB-oFB" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="Qdy-aV-7uk"/>
                             <constraint firstAttribute="trailing" secondItem="aVi-MP-xQb" secondAttribute="trailing" id="ab0-Up-iqq"/>
+                            <constraint firstItem="Djm-O9-7Fq" firstAttribute="leading" secondItem="MzF-EZ-olv" secondAttribute="leading" constant="12" id="eiq-3j-Ggw"/>
                             <constraint firstItem="aVi-MP-xQb" firstAttribute="top" secondItem="Mw7-jX-pGn" secondAttribute="bottom" id="h3c-cW-5kx"/>
                             <constraint firstItem="hx9-6g-6g6" firstAttribute="top" secondItem="ofa-DM-eam" secondAttribute="bottom" id="lqh-zz-m3u"/>
-                            <constraint firstItem="ySJ-YB-oFB" firstAttribute="top" secondItem="PZd-wa-csa" secondAttribute="bottom" id="nhM-Iw-zG0"/>
                             <constraint firstItem="ofa-DM-eam" firstAttribute="top" secondItem="aVi-MP-xQb" secondAttribute="bottom" id="njH-YP-Y0j"/>
                             <constraint firstAttribute="bottom" secondItem="ySJ-YB-oFB" secondAttribute="bottom" id="qoO-cG-42e"/>
-                            <constraint firstAttribute="trailing" secondItem="PZd-wa-csa" secondAttribute="trailing" id="u3Q-lm-Zhx"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -208,11 +181,10 @@
             <connections>
                 <outlet property="authorImage" destination="ohX-hX-Ive" id="3Zj-2v-mHd"/>
                 <outlet property="authorLabel1" destination="77c-YX-YJ6" id="PI0-jw-m89"/>
-                <outlet property="authorLabel2" destination="Mvj-G6-m7p" id="j1h-m2-pcu"/>
                 <outlet property="bookMarkButton" destination="RZz-03-eS0" id="GyP-fG-JOa"/>
                 <outlet property="chatButton" destination="UEE-vE-3uG" id="ybi-a6-wIj"/>
                 <outlet property="commentDescription" destination="ySJ-YB-oFB" id="LnL-OW-Ne4"/>
-                <outlet property="content" destination="zra-Wa-nHX" id="8i3-Nd-V6e"/>
+                <outlet property="content" destination="Djm-O9-7Fq" id="41k-kk-i37"/>
                 <outlet property="dmButton" destination="x8U-AQ-7iJ" id="fHb-OC-6PT"/>
                 <outlet property="feedImage" destination="aVi-MP-xQb" id="gbb-61-hIf"/>
                 <outlet property="heartButton" destination="HN8-if-g3E" id="9Z7-x4-lVe"/>

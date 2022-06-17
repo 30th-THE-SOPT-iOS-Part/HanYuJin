@@ -11,7 +11,7 @@ class HomeTabViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK:- Views
+    // MARK: - Views
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -23,32 +23,33 @@ class HomeTabViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(collectionViewNib, forCellWithReuseIdentifier: StoryCollectionViewCell.identifier)
-        collectionView.frame = CGRect(x: 0, y: 0, width:  UIScreen.main.bounds.width, height: 8 + 72 + 8)
+        collectionView.frame = CGRect(x: 0, y: 0, width:  UIScreen.main.bounds.width, height: 4 + 72 + 4)
+
         return collectionView
     }()
-    
-    // MARK:- LifeCycles
+    // MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        registerNib()
+    }
+    private func registerNib() {
         let tableViewNib = UINib(nibName: FeedTableViewCell.identifier, bundle: nil)
         tableView.register(tableViewNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 488
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = collectionView
     }
 }
-// MARK:- TableView Delegate
+// MARK: - TableView Delegate
 extension HomeTabViewController : UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-//
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
 }
 extension HomeTabViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,8 +62,7 @@ extension HomeTabViewController : UITableViewDataSource{
         return FeedDataModel.sampleData.count
     }
 }
-
-// MARK:- CollectionView Delegate
+// MARK: - CollectionView Delegate
 extension HomeTabViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return StoryDataModel.sampleData.count

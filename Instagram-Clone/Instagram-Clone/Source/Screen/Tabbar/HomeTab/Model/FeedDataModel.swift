@@ -40,6 +40,6 @@ extension FeedDataModel{
         FeedDataModel(authorImageName: "avatar3", feedImageName: "postImage3", likes: 30, author: "avatar1", content: "기회는 일어나는 것이 아니라 만들어내는 것이다.", comment: 39),
         FeedDataModel(authorImageName: "avatar4", feedImageName: "postImage4", likes: 40, author: "avatar1", content: "기회는 일어나는 것이 아니라 만들어내는 것이다.", comment: 49),
         FeedDataModel(authorImageName: "avatar5", feedImageName: "postImage5", likes: 50, author: "avatar1", content: "기회는 일어나는 것이 아니라 만들어내는 것이다.", comment: 59),
-        FeedDataModel(authorImageName: "avatar6", feedImageName: "postImage6", likes: 60, author: "avatar1", content: "기회는 일어나는 것이 아니라 만들어내는 것이다.", comment: 69)
+        FeedDataModel(authorImageName: "avatar6", feedImageName: "postImage6", likes: 60, author: "avatar1", content: "기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.기회는 일어나는 것이 아니라 만들어내는 것이다.", comment: 69)
     ]
 }

@@ -15,6 +15,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var buttonSignUp: UIButton!
     var eyeButton = UIButton(type: .custom)
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setLoginButton()
@@ -22,6 +23,51 @@ class LoginController: UIViewController {
         setNavigationControllerBar()
         textfieldChange()
         setPasswordShownButtonImage()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        removeTextField(emailTextField,passwordTextField)
+    }
+    //MARK: - naviagation controller
+    private func setNavigationControllerBar(){
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    //MARK: - Text field
+    private func textfieldChange(){
+        emailTextField.clearButtonMode = .whileEditing
+        passwordTextField.addTarget(self, action: #selector(handleTextFieldDidChange), for:
+                .editingChanged)
+        //        만약에 둘다 addAction이 필요하면, [emailTextField,passwordTextField].forEach {  $0.addAction(UIAction(handler:self.textHandler), for:.editingChanged      }이런 방식으로도 바꿀수 있음
+    }
+    @objc func handleTextFieldDidChange() {
+        if  (emailTextField.hasText && passwordTextField.hasText) {
+            buttonLogin.isEnabled = true
+        } else{
+            buttonLogin.isEnabled = false
+        }
+    }
+    //MARK: - Button @IBAction
+    //    UINavigationController
+    //    push이동 : 스택위에 뷰컨을 push하고 화면을 업데이트
+    @IBAction func signupClickButton(_ sender: Any) {
+        guard let goToSignUpController = self.storyboard?.instantiateViewController(withIdentifier: "SignupMakeNameController") else { return }
+        self.navigationController?.pushViewController(goToSignUpController, animated: true)
+    }
+    //    로그인 : present 이동하기
+    //    modally : 뷰 위에 뷰가 한겹 올라간 구조
+    @IBAction func loginClickButton(_ sender: Any) {
+        
+        if let name = emailTextField.text, let password = passwordTextField.text {
+            login(name: name, email: name, password: password)
+        }
+    }
+    private func setSignUpButton(){
+        buttonSignUp.setTitle("가입하기", for: .normal)
+    }
+    private func setLoginButton(){
+        buttonLogin.backgroundColor = .button_skyblue
+        buttonLogin.setTitle("로그인", for: .normal)
+        buttonLogin.setTitleColor(.white, for: .disabled)
+        buttonLogin.isEnabled = false
     }
     private func setPasswordShownButtonImage(){
         eyeButton = UIButton.init(primaryAction: UIAction(handler: { [self]_ in
@@ -40,58 +86,52 @@ class LoginController: UIViewController {
         passwordTextField.rightView = eyeButton
         passwordTextField.rightViewMode = .always
     }
-    override func viewWillAppear(_ animated: Bool) {
-        removeTextField()
-    }
-    //view가 사라질때, textfield 글자 없어지게
-    private func removeTextField() {
-        [emailTextField,passwordTextField].forEach {
-            $0.text?.removeAll()
-        }
-    }
-    private func setSignUpButton(){
-        buttonSignUp.setTitle("가입하기", for: .normal)
-//        buttonSignUp.titleLabel?.font = UIFont(size:15)
-    }
-
-    private func setNavigationControllerBar(){
-        self.navigationController?.navigationBar.topItem?.title = ""
-    }
-    private func setLoginButton(){
-        buttonLogin.backgroundColor = .button_skyblue
-        buttonLogin.setTitle("로그인", for: .normal)
-        buttonLogin.setTitleColor(.white, for: .disabled)
-        buttonLogin.isEnabled = false
-    }
-    private func textfieldChange(){
-        emailTextField.clearButtonMode = .whileEditing
-        passwordTextField.addTarget(self, action: #selector(handleTextFieldDidChange), for:
-                .editingChanged)
-        //        만약에 둘다 addAction이 필요하면, [emailTextField,passwordTextField].forEach {  $0.addAction(UIAction(handler:self.textHandler), for:.editingChanged      }이런 방식으로도 바꿀수 있음
-    }
-    @objc func handleTextFieldDidChange(_ textField: UITextField) {
-        if  (emailTextField.hasText && passwordTextField.hasText) {
-            buttonLogin.isEnabled = true
-        } else{
-            buttonLogin.isEnabled = false
-        }
-        //        self.buttonLogin.isEnabled = self.emailTextField.hasText && self.passwordTextField.hasText
-        
-    }
-    //    UINavigationController
-    //    push이동 : 스택위에 뷰컨을 push하고 화면을 업데이트
-    @IBAction func signupClickButton(_ sender: Any) {
-        guard let goToSignUpController = self.storyboard?.instantiateViewController(withIdentifier: "SignupMakeNameController") else { return }
-        self.navigationController?.pushViewController(goToSignUpController, animated: true)
-    }
-    //    로그인 : present 이동하기
-    //    modally : 뷰 위에 뷰가 한겹 올라간 구조
-    @IBAction func loginClickButton(_ sender: Any) {
-        guard let goToCompleteController = self.storyboard?.instantiateViewController(withIdentifier: "CompleteController") as? CompleteController else { return }
-        
-        goToCompleteController.message = emailTextField.text
-        goToCompleteController.modalPresentationStyle = .fullScreen
-        self.present(goToCompleteController, animated: true, completion: nil)
-    }
 }
 
+extension LoginController {
+    
+    func login(name: String, email : String, password : String){
+        
+        UserService.shared.login(name: name, email: email, password: password) {
+            response in
+            switch response {
+            case .success(let data):
+                print(response)
+                guard let data = data as? LoginResponse else { return }
+                print(data)
+                self.alertLogin(message: "로그인 성공")
+            case .requestErr(let err):
+                print(err)
+                self.alertLoginFail(message: "로그인 실패")
+            case .pathErr:
+                print("pathErr")
+                self.alertLoginFail(message: "로그인 실패")
+            case .serverErr:
+                print("serverErr")
+                self.alertLoginFail(message: "로그인 실패")
+            case .networkFail:
+                print("networkFail")
+                self.alertLoginFail(message: "로그인 실패")
+            }
+        }
+    }
+    //MARK: - Alert 창
+    func alertLoginFail(message:String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertVC.addAction(cancelAction)
+        present(alertVC,animated:true,completion: nil)
+    }
+    
+    func alertLogin(message: String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default){
+            action in
+            let sb = UIStoryboard.init(name: "Tabbar", bundle: nil)
+            guard let tabVC = sb.instantiateViewController(withIdentifier: "TabbarVC") as? UITabBarController else {return}
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(tabVC, animated: false)
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true)
+    }
+}

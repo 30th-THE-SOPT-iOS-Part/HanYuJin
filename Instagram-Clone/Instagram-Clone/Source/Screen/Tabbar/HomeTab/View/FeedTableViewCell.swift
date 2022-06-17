@@ -28,11 +28,11 @@ class FeedTableViewCell: UITableViewCell {
     }
     // MARK: - Feed Data Model 연결
     func setData(_ feedData:FeedDataModel){
-        feedImage.image = .load(named: feedData.feedImageName)
+//        feedImage.image = .load(named: feedData.feedImageName)
         authorImage.setImage(feedData.authorImage, for: .normal)
         authorLabel1.setTitle(feedData.author, for: .normal)
         commentDescription.setTitle(feedData.commentDescription, for: .normal)
-        content.attributedText = attributeString(profileName: feedData.feedImageName, content: feedData.content)
+//        content.attributedText = attributeString(profileName: feedData.feedImageName, content: feedData.content)
         likeDescription.setTitle(feedData.likeDescription, for: .normal)
     }
     // MARK: - IBAction

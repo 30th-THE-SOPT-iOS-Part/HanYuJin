@@ -30,6 +30,7 @@
 		1A611442280D2B2B00AEEC3C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611441280D2B2B00AEEC3C /* TabBarViewController.swift */; };
 		1A71C8D728210BE4004BE851 /* FeedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A71C8D628210BE4004BE851 /* FeedDataModel.swift */; };
 		1A71C8D9282124B1004BE851 /* StoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A71C8D8282124B1004BE851 /* StoryDataModel.swift */; };
+		1A933745285C8EEB004B0558 /* 7주차세미나.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A933744285C8EEB004B0558 /* 7주차세미나.md */; };
 		1ACBC855281C42790018C72E /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBC853281C42790018C72E /* StoryCollectionViewCell.swift */; };
 		1ACBC856281C42790018C72E /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACBC854281C42790018C72E /* StoryCollectionViewCell.xib */; };
 		1ACBC859281C42990018C72E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACBC857281C42990018C72E /* FeedTableViewCell.swift */; };
@@ -72,6 +73,7 @@
 		1A611441280D2B2B00AEEC3C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1A71C8D628210BE4004BE851 /* FeedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataModel.swift; sourceTree = "<group>"; };
 		1A71C8D8282124B1004BE851 /* StoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataModel.swift; sourceTree = "<group>"; };
+		1A933744285C8EEB004B0558 /* 7주차세미나.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "7주차세미나.md"; sourceTree = "<group>"; };
 		1ACBC853281C42790018C72E /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1ACBC854281C42790018C72E /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		1ACBC857281C42990018C72E /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				1A0E6BB9281225E600F2A433 /* Source */,
 				1A0E6BB8281225DD00F2A433 /* Global */,
 				1ACBE08327FADE0700A2213A /* Info.plist */,
+				1A933744285C8EEB004B0558 /* 7주차세미나.md */,
 			);
 			path = "Instagram-Clone";
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				1ACBC85A281C42990018C72E /* FeedTableViewCell.xib in Resources */,
 				1ACBE07F27FADE0700A2213A /* Assets.xcassets in Resources */,
 				1A611432280D2A1900AEEC3C /* ProfileTab.storyboard in Resources */,
+				1A933745285C8EEB004B0558 /* 7주차세미나.md in Resources */,
 				1ACBE07D27FADE0400A2213A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
